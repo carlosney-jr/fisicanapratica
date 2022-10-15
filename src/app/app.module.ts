@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -11,8 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavbarComponent
   ],
   imports: [
-    BrowserModule,
-    NgbModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
