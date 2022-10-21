@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-$black: brown;
+$purple: purple;
+$white: white;
 
-$navbar-light-color:                rgba($black, .55);
-$navbar-light-hover-color:          rgba($black, .7);
-$navbar-light-active-color:         rgba($black, .9);
-$navbar-light-disabled-color:       rgba($black, .3);
-$navbar-light-brand-color:          $navbar-light-active-color;
-$navbar-light-brand-hover-color:    $navbar-light-active-color;
+$primary: $purple;
+$secondary: $white;
+
+$navbar-light-color:                rgba($purple, .55);
+$navbar-light-hover-color:          rgba($purple, .7);
+$navbar-light-active-color:         rgba($purple, .9);
+$navbar-light-disabled-color:       rgba($purple, .3);
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
