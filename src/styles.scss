@@ -1,14 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-$purple: purple;
+
+$roxo-primario: #3B245A;
+$roxo-secundario: #7F4FC3;
 $white: white;
 
-$primary: $purple;
-$secondary: $white;
+$primary: $roxo-primario;
+$secondary: $roxo-secundario;
 
-$navbar-light-color:                rgba($purple, .55);
-$navbar-light-hover-color:          rgba($purple, .7);
-$navbar-light-active-color:         rgba($purple, .9);
-$navbar-light-disabled-color:       rgba($purple, .3);
+.navbar {
+    background-color: $roxo-primario;
+}
+
+
+$navbar-light-color:                rgba($white, .55);
+$navbar-light-hover-color:          rgba($white, .7);
+$navbar-light-active-color:         rgba($white, .9);
+$navbar-light-disabled-color:       rgba($white, .3);
+
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
@@ -22,3 +30,4 @@ $navbar-light-disabled-color:       rgba($purple, .3);
 
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
+
