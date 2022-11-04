@@ -11,6 +11,12 @@ $secondary: $roxo-secundario;
     background-color: $roxo-primario;
 }
 
+.navbar img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
 
 $navbar-light-color:                rgba($white, .55);
 $navbar-light-hover-color:          rgba($white, .7);
