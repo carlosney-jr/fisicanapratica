@@ -23,6 +23,11 @@ $navbar-light-hover-color:          rgba($white, .7);
 $navbar-light-active-color:         rgba($white, .9);
 $navbar-light-disabled-color:       rgba($white, .3);
 
+
+$dropdown-link-color:               $white;
+$dropdown-link-hover-color:         $navbar-light-hover-color;
+$dropdown-bg:                       $roxo-primario;
+
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
@@ -37,3 +42,6 @@ $navbar-light-disabled-color:       rgba($white, .3);
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 
+.navbar li {
+    font-size: 24px;
+}
