@@ -1,3 +1,4 @@
+import { ExperimentosModule } from './experimentos/experimentos.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ExperimentosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
