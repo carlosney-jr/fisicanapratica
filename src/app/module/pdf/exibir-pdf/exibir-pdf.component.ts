@@ -8,6 +8,7 @@ import { PerguntasRespostas } from '../../perguntasrespostas';
   templateUrl: './exibir-pdf.component.html',
   styleUrls: ['./exibir-pdf.component.scss']
 })
+
 export class ExibirPDFComponent implements OnInit {
   listaAlunos: string[] = [];
   listaPerguntasRespostas: PerguntasRespostas[] = [];

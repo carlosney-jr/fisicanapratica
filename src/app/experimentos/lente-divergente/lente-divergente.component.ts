@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ExibirPDFComponent } from 'src/app/module/pdf/exibir-pdf/exibir-pdf.component';
 
 @Component({
   selector: 'app-lente-divergente',
