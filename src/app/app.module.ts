@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './module/navbar/navbar.component';
 import { HomeComponent } from './module/home/home.component';
 import { PDFComponent } from './module/pdf/pdf.component';
+import { ExibirPDFComponent } from './module/pdf/exibir-pdf/exibir-pdf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    PDFComponent
+    PDFComponent,
+    ExibirPDFComponent
   ],
   imports: [
     BrowserModule,
     ExperimentosModule
+  ],
+  exports: [
+    ExibirPDFComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

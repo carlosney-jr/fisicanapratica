@@ -1,6 +1,5 @@
-import { PerguntasRespostas } from './../../module/perguntasrespostas';
-import { ServicoPDFService } from './../../servico-pdf.service';
 import { Component, OnInit } from '@angular/core';
+import { ExibirPDFComponent } from 'src/app/module/pdf/exibir-pdf/exibir-pdf.component';
 
 @Component({
   selector: 'app-lente-divergente',
@@ -8,17 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lente-divergente.component.scss']
 })
 export class LenteDivergenteComponent implements OnInit {
-  listaAlunos: string[] = ["Carlos", "Ryan"];
-  listaPerguntasRespostas: PerguntasRespostas[] = [new PerguntasRespostas("Oii", "Tchauu")];
+  _aba: string = "experimento"
 
-  constructor(private servicoPDF: ServicoPDFService) { }
+  constructor() { }
 
   ngOnInit(): void {
     
   }
 
-  exportar() {
-    this.servicoPDF.exportaPDF(this.listaAlunos, this.listaPerguntasRespostas);
+  set aba(aba: string) {
+    if (aba=="experimento" || aba=="PDF") {
+      this._aba = aba;
+    } else {
+      return
+    }
   }
 
 }

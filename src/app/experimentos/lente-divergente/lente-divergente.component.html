@@ -1,4 +1,6 @@
-<div id="principal">
+<div class="container" ngSwitch="aba">
+<div id="principal" *ngSwitchCase="'experimento'">
+<button (click)="aba='PDF'">Retornar </button>
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
@@ -95,5 +97,6 @@
     </div>
   </div>
 </div>
-
-<button (click)="exportar()"></button>
+<div id="principal" *ngSwitchCase="'PDF'">
+  <app-exibir-pdf></app-exibir-pdf>
+</div>
