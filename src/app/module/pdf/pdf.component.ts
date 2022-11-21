@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
+
 import { PerguntasRespostas } from './../perguntasrespostas';
 import { ServicoPDFService } from './../../servico-pdf.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pdf',

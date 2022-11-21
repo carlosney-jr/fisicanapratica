@@ -1,3 +1,4 @@
+import { PdfModule } from './module/pdf/pdf.module';
 import { ExperimentosModule } from './experimentos/experimentos.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,12 +14,11 @@ import { ExibirPDFComponent } from './module/pdf/exibir-pdf/exibir-pdf.component
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    PDFComponent,
-    ExibirPDFComponent
   ],
   imports: [
     BrowserModule,
-    ExperimentosModule
+    ExperimentosModule,
+    PdfModule
   ],
   exports: [
     ExibirPDFComponent
