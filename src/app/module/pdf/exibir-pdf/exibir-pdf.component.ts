@@ -6,7 +6,7 @@ import { PerguntasRespostas } from '../../perguntasrespostas';
 @Component({
   selector: 'app-exibir-pdf',
   templateUrl: './exibir-pdf.component.html',
-  styleUrls: ['./exibir-pdf.component.scss']
+  styleUrls: ['./exibir-pdf.component.scss'],
 })
 
 export class ExibirPDFComponent implements OnInit {
@@ -23,7 +23,7 @@ export class ExibirPDFComponent implements OnInit {
   }
 
   retornar() {
-    this.retornarBool.emit({aba: 'PDF'})
+    this.retornarBool.emit({aba: 'PDF'});
   }
 
   exportar() {

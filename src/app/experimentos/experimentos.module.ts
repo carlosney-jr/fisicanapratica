@@ -1,5 +1,4 @@
 import { PdfModule } from './../module/pdf/pdf.module';
-import { AppModule } from './../app.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LenteDivergenteComponent } from './lente-divergente/lente-divergente.component';

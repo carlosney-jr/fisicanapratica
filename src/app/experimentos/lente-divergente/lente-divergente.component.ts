@@ -6,12 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lente-divergente.component.scss']
 })
 export class LenteDivergenteComponent implements OnInit {
-  _aba: string = "experimento"
+  private _aba: string = "experimento"
 
   constructor() { }
 
   ngOnInit(): void {
     
+  }
+
+  get aba() {
+    return this._aba;
   }
 
   set aba(aba: string) {
@@ -22,4 +26,7 @@ export class LenteDivergenteComponent implements OnInit {
     }
   }
 
+  configurarAba(evento: Event){
+    this.aba = evento.aba;
+  }
 }
