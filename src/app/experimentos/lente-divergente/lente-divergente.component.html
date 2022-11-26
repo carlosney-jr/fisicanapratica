@@ -1,9 +1,10 @@
 <div class="container" [ngSwitch]="aba">
   <div id="principal" *ngSwitchCase="'PDF'">
     <app-exibir-pdf
-    (retornarBool)="configurarAba($event)"></app-exibir-pdf>
+    (retornarBool)="configurarAba($event)"
+    [perguntas]="questoes"></app-exibir-pdf>
   </div>
-  <div id="principal" *ngSwitchDefault="'experimento'">
+  <div id="principal" *ngSwitchCase="'experimento'">
     <button (click)="aba = 'PDF'">Retornar</button>
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">

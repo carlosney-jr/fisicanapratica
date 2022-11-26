@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LenteDivergenteComponent implements OnInit {
   private _aba: string = "experimento"
+  public questoes: string[] = [
+    "Como foi possível perceber o efeito 'Monga'?"
+  ]
 
   constructor() { }
 
@@ -26,7 +29,7 @@ export class LenteDivergenteComponent implements OnInit {
     }
   }
 
-  configurarAba(evento: Event){
-    this.aba = evento.aba;
+  configurarAba(evento: string){
+    this._aba = evento;
   }
 }

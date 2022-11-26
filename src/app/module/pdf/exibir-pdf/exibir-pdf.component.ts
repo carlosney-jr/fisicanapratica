@@ -15,7 +15,7 @@ export class ExibirPDFComponent implements OnInit {
 
   @Input('perguntas') listaPerguntas : string[] = [];
 
-  @Output() retornarBool = new EventEmitter()
+  @Output() retornarBool: EventEmitter<string> = new EventEmitter<string>()
   constructor(private servicoPDF: ServicoPDFService) {
   }
 
@@ -23,7 +23,7 @@ export class ExibirPDFComponent implements OnInit {
   }
 
   retornar() {
-    this.retornarBool.emit({aba: 'PDF'});
+    this.retornarBool.emit("experimento");
   }
 
   exportar() {
