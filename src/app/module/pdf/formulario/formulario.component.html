@@ -1,0 +1,18 @@
+<button (click)="retornar()">Retornar</button>
+
+<div>
+    <form (ngSubmit)="exportar()" [formGroup]="form">
+  
+      <div *ngFor="let questao of listaPerguntas" class="form-row" [>
+        <app-questao [questao]="questao" [form]="form"></app-questao>
+      </div>
+  
+      <div class="form-row">
+        <button type="submit" [disabled]="!form.valid">Save</button>
+      </div>
+    </form>
+  
+    <div *ngIf="payLoad" class="form-row">
+      <strong>Saved the following values</strong><br>{{payLoad}}
+    </div>
+  </div>

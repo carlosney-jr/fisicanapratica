@@ -1,0 +1,16 @@
+<div [formGroup]="form">
+  <div [ngSwitch]="questao.type">
+    <div *ngSwitchCase="'text'">
+      <label [attr.for]="questao.key">{{ questao.label }}</label>
+      <input
+        [id]="questao.key"
+        [type]="questao.type"
+        [(ngModel)]="questao.value"
+      />
+    </div>
+  </div>
+
+  <div class="errorMessage" *ngIf="!isValid">
+    {{ questao.label }} is required
+  </div>
+</div>
