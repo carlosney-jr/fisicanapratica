@@ -1,8 +1,8 @@
 <div class="container" [ngSwitch]="aba">
   <div id="principal" *ngSwitchCase="'PDF'">
-    <app-exibir-pdf
+    <app-formulario
     (retornarBool)="configurarAba($event)"
-    [perguntas]="questoes"></app-exibir-pdf>
+    [perguntas]="questoes"></app-formulario>
   </div>
   <div id="principal" *ngSwitchCase="'experimento'">
     <button (click)="aba = 'PDF'">Retornar</button>

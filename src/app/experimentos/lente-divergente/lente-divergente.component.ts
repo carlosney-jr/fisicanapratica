@@ -1,4 +1,6 @@
+import { PerguntasRespostas } from './../../module/perguntasrespostas';
 import { Component, OnInit } from '@angular/core';
+import { Pergunta } from 'src/app/module/pergunta';
 
 @Component({
   selector: 'app-lente-divergente',
@@ -7,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LenteDivergenteComponent implements OnInit {
   private _aba: string = "experimento"
-  public questoes: string[] = [
-    "Como foi possível perceber o efeito 'Monga'?"
+  public questoes: PerguntasRespostas<string>[] = [
+    new Pergunta({
+      key: '1',
+      label: "Como foi possível perceber o efeito 'Monga'?",
+      order: 1
+    })
   ]
 
   constructor() { }

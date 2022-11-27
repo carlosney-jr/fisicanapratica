@@ -1,23 +1,28 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormularioComponent } from './formulario/formulario.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
 import { PDFComponent } from './pdf.component';
-import { ExibirPDFComponent } from './exibir-pdf/exibir-pdf.component';
+import { QuestaoComponent } from './questao/questao.component';
 
 
 
 @NgModule({
   declarations: [
-    ExibirPDFComponent,
-    PDFComponent
+    FormularioComponent,
+    PDFComponent,
+    QuestaoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     PDFComponent,
-    ExibirPDFComponent
+    FormularioComponent
   ]
 })
 export class PdfModule { }

@@ -10,7 +10,7 @@ import { ServicoPDFService } from './../../servico-pdf.service';
 })
 export class PDFComponent implements OnInit {
   listaAlunos: string[];
-  listaPerguntasRespostas: PerguntasRespostas[];
+  listaPerguntasRespostas: PerguntasRespostas<string>[];
   constructor(private servicoPDF: ServicoPDFService) {
     this.listaAlunos = [];
     this.listaPerguntasRespostas = [];
@@ -22,9 +22,6 @@ export class PDFComponent implements OnInit {
       if (valor) {
         this.listaAlunos = this.servicoPDF.listaAlunos;
         this.listaPerguntasRespostas = this.servicoPDF.listaPerguntasRespostas;
-        console.log(`Alunos: ${this.listaAlunos}`);
-        console.log(`Perguntas: ${this.listaPerguntasRespostas[0].pergunta}`)
-        console.log(`Perguntas: ${this.listaPerguntasRespostas[0].resposta}`)
       }
     });
   }
