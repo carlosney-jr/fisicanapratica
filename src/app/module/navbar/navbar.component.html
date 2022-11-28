@@ -21,7 +21,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <img
+              src="assets/imgs/Navbar/SobreProjeto.png"
+              alt="erro"
+              class="d-inline-block align-text-top"
+            />
+            Home
+          </a>
+        </li>
+        <!-- TODO: Colocar este item para ficar ativo quando as rotas filhas estiverem ativas-->
+        <li
+          class="nav-item dropdown"
+        >
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -36,23 +54,42 @@
             />Experimentos
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="experimento/torque"
+                >Torque</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="experimento/lente_divergente"
+                >Lente Divergente</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="experimento/lente_convergente"
+                >Lente Convergente</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="experimento/transformador"
+                >Transformadores</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="experimento/hooke"
+                >Lei de Hooke</a
+              >
+            </li>
           </ul>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="Página Inicial" href="#">
-            <img
-              src="assets/imgs/Navbar/SobreProjeto.png"
-              alt="erro"
-              class="d-inline-block align-text-top"
-            >
-            Sobre o Projeto
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a
+            class="nav-link"
+            routerLink="/informacoes"
+            routerLinkActive="active"
+          >
             <img
               src="assets/imgs/Navbar/Componentes.png"
               alt="erro"
