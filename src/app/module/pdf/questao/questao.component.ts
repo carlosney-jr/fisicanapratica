@@ -16,7 +16,6 @@ export class QuestaoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.questao)
   }
 
   get isValid() { return this.form.controls[this.questao.key].valid; }

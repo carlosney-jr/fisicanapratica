@@ -17,11 +17,15 @@ $secondary: $roxo-secundario;
     border-radius: 50%;
 }
 
+.navbar li a {
+    font-size: 24px;
+}
 
-$navbar-light-color:                rgba($white, .55);
-$navbar-light-hover-color:          rgba($white, .7);
-$navbar-light-active-color:         rgba($white, .9);
-$navbar-light-disabled-color:       rgba($white, .3);
+
+$navbar-light-color:                rgba($white, .55 * 100%);
+$navbar-light-hover-color:          rgba($white, .7 * 100%);
+$navbar-light-active-color:         rgba($white, .9 * 100%);
+$navbar-light-disabled-color:       rgba($white, .3 * 100%);
 
 
 $dropdown-link-color:               $white;
@@ -42,6 +46,3 @@ $dropdown-bg:                       $roxo-primario;
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 
-.navbar li {
-    font-size: 24px;
-}

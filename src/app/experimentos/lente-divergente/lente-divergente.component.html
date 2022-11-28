@@ -2,7 +2,8 @@
   <div id="principal" *ngSwitchCase="'PDF'">
     <app-formulario
     (retornarBool)="configurarAba($event)"
-    [perguntas]="questoes"></app-formulario>
+    [perguntas]="questoes"
+    [nomeExperimento]="'Efeito Monga'"></app-formulario>
   </div>
   <div id="principal" *ngSwitchCase="'experimento'">
     <button (click)="aba = 'PDF'">Retornar</button>

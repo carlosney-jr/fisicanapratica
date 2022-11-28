@@ -1,0 +1,16 @@
+@import "src/styles.scss";
+
+
+.pdfHeader {
+    border-radius: 1cm;
+    border-color: $purple;
+}
+
+#campoProfessora {
+    background-color: rgba($roxo-primario, .85 *100%);
+    color: $white;
+}
+
+#campoAlunos {
+    background-color: rgba($roxo-secundario, .50 * 100%)
+}

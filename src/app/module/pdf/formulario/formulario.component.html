@@ -1,9 +1,18 @@
 <button (click)="retornar()">Retornar</button>
-
+<div>
+<form [formGroup]="alunosForm">
+  <div formArrayName="alunos">
+    <div *ngFor="let aluno of getAlunoFormsControl(); let i = index"
+        [formGroupName]="i">
+        <input formControlName="nome" placeholder="Nome do Aluno {{ i+1 }}">
+        <input type="button" (click)="addAlunoForms()" value="Add">
+        <input type="button" (click)="removerAlunoForms(i)" value="Del">
+    </div>
+</div>
 <div>
     <form (ngSubmit)="exportar()" [formGroup]="form">
   
-      <div *ngFor="let questao of listaPerguntas" class="form-row" [>
+      <div *ngFor="let questao of listaPerguntas" class="form-row">
         <app-questao [questao]="questao" [form]="form"></app-questao>
       </div>
   
@@ -12,7 +21,5 @@
       </div>
     </form>
   
-    <div *ngIf="payLoad" class="form-row">
-      <strong>Saved the following values</strong><br>{{payLoad}}
-    </div>
+    
   </div>
