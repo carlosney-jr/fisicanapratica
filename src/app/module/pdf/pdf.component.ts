@@ -26,7 +26,7 @@ export class PDFComponent implements OnInit {
     this.servicoPDF.obsPDF.subscribe((valor) => {
       if (valor) {
         this.definirAtributos();
-        setTimeout(this.exportarPDF,1000);
+        setTimeout(this.exportarPDF,1000, this.nomeExperimento);
       }
     });
   }
@@ -41,14 +41,16 @@ export class PDFComponent implements OnInit {
   }
 
 
-  exportarPDF() {
+  exportarPDF(ExpNM: string) {
     let doc = new jsPDF();
     let divParaClonar = document.getElementById("pdfExportado") as HTMLElement;
     let div = divParaClonar.cloneNode(true) as HTMLElement;
     div.style.display = 'block'
+    console.log(ExpNM)
+    let nomeExperimento: string = ExpNM;
     doc.html(div, {
       callback: function(doc) {
-        doc.save("experimento.pdf")
+        doc.save(`Experimento ${nomeExperimento}.pdf`)
       },
       margin: [10,10,10,10],
       autoPaging: 'text',

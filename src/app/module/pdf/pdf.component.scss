@@ -12,5 +12,14 @@
 }
 
 #campoAlunos {
-    background-color: rgba($roxo-secundario, .50 * 100%)
+    background-color: rgba($roxo-secundario, .50 * 100%);
+    color: $white
+}
+
+.resposta {
+    color: $red
+}
+
+.resposta .pergunta {
+    text-align: justify;
 }

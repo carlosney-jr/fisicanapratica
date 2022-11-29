@@ -1,14 +1,13 @@
 <div [formGroup]="form">
   <div [ngSwitch]="questao.type">
     <div *ngSwitchCase="'text'">
-      <label [attr.for]="questao.key">{{ questao.label }} *</label>
-      <input
+      <label [attr.for]="questao.key"><b>{{ questao.order }}ª questão:</b> {{ questao.label }} *</label>
+      <textarea
         [id]="questao.key"
-        [type]="questao.type"
         [formControlName]="questao.key"
         class="form-control"
         [ngClass]="isValid ? 'is-valid' : 'is-invalid'"
-      />
+      ></textarea>
     </div>
   </div>
 </div>

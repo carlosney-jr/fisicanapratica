@@ -15,6 +15,11 @@ export class LenteDivergenteComponent implements OnInit {
       key: '1',
       label: "Como foi possível perceber o efeito 'Monga'?",
       order: 1
+    }),
+    new Pergunta({
+      key: '2',
+      label: "Insira as anotações daquilo lá",
+      order: 2
     })
   ]
 
