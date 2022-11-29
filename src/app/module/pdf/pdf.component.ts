@@ -43,8 +43,9 @@ export class PDFComponent implements OnInit {
 
   exportarPDF() {
     let doc = new jsPDF();
-    let div = document.getElementById("pdfExportado") as HTMLElement;
-
+    let divParaClonar = document.getElementById("pdfExportado") as HTMLElement;
+    let div = divParaClonar.cloneNode(true) as HTMLElement;
+    div.style.display = 'block'
     doc.html(div, {
       callback: function(doc) {
         doc.save("experimento.pdf")
@@ -57,15 +58,7 @@ export class PDFComponent implements OnInit {
       windowWidth: 675
     })
   }
-  /*exportarPDF() {
-    let div: any = document.getElementById("pdfExportado");
-    html2canvas(div).then(canvas => {
-      const conteudoDivURL = canvas.toDataURL('image/jpeg')
-      let pdf = new jsPDF('p', 'cm', 'a4');
-      pdf.addImage(conteudoDivURL, 'JPEG', 0, 0, 21.0, 29.7)
-      pdf.save('Relatório.pdf')
-    })
-  } */
+  
 
   definirAtributos() {
     this.listaAlunos = this.tratarLista(this.servicoPDF.listaAlunos);

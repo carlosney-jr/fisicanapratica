@@ -1,25 +1,38 @@
-<button (click)="retornar()">Retornar</button>
-<div>
-<form [formGroup]="alunosForm">
-  <div formArrayName="alunos">
-    <div *ngFor="let aluno of getAlunoFormsControl(); let i = index"
-        [formGroupName]="i">
-        <input formControlName="nome" placeholder="Nome do Aluno {{ i+1 }}">
-        <input type="button" (click)="addAlunoForms()" value="Add">
-        <input type="button" (click)="removerAlunoForms(i)" value="Del">
+<button (click)="retornar()" class="btn btn-primary">Retornar</button>
+<div class="container text-center">
+  <p>Insira o nome dos alunos:</p>
+  <input type="button" (click)="addAlunoForms()" value="Adicionar aluno" class="btn btn-secondary"/>
+  <input type="button" (click)="removerAlunoForms()" value="Deletar último aluno" class="btn btn-danger"/>
+  <form [formGroup]="alunosForm">
+    <div formArrayName="alunos" class="row">
+      <div
+        *ngFor="let aluno of getAlunoFormsControl(); let i = index"
+        [formGroupName]="i"
+        class="input-group"
+      >
+        <span class="input-group-text">Aluno {{ i + 1 }}</span>
+        <input
+          formControlName="nome"
+          placeholder="Nome"
+          type="text"
+          class="form-control"
+        />
+        
+      </div>
     </div>
+  </form>
 </div>
 <div>
-    <form (ngSubmit)="exportar()" [formGroup]="form">
-  
-      <div *ngFor="let questao of listaPerguntas" class="form-row">
-        <app-questao [questao]="questao" [form]="form"></app-questao>
-      </div>
-  
-      <div class="form-row">
-        <button type="submit" [disabled]="!form.valid">Save</button>
-      </div>
-    </form>
-  
-    
-  </div>
+  <form (ngSubmit)="exportar()" [formGroup]="form">
+    <div
+      *ngFor="let questao of listaPerguntas"
+      class="input-group has-validation"
+    >
+      <app-questao [questao]="questao" [form]="form"></app-questao>
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="!form.valid" class="btn" [ngClass]="form.valid ? 'btn-success' : ''" id="enviarForms">Enviar formulário</button>
+    </div>
+  </form>
+</div>

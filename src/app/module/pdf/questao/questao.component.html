@@ -1,16 +1,14 @@
 <div [formGroup]="form">
   <div [ngSwitch]="questao.type">
     <div *ngSwitchCase="'text'">
-      <label [attr.for]="questao.key">{{ questao.label }}</label>
+      <label [attr.for]="questao.key">{{ questao.label }} *</label>
       <input
         [id]="questao.key"
         [type]="questao.type"
         [formControlName]="questao.key"
+        class="form-control"
+        [ngClass]="isValid ? 'is-valid' : 'is-invalid'"
       />
     </div>
-  </div>
-
-  <div class="errorMessage" *ngIf="!isValid">
-    {{ questao.label }} is required
   </div>
 </div>

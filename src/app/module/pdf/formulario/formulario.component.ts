@@ -39,10 +39,10 @@ export class FormularioComponent implements OnInit {
     aluno.push(this.criarFormAlunos());
   }
 
-  removerAlunoForms(i: number) {
+  removerAlunoForms() {
     const aluno = this.alunosForm.get('alunos') as FormArray
     if (aluno.length > 1) {
-      aluno.removeAt(i)
+      aluno.removeAt(aluno.length-1)
     } else {
       aluno.reset()
     }
