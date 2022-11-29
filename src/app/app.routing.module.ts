@@ -1,7 +1,8 @@
-import { SobreOProjetoComponent } from './module/sobre-oprojeto/sobre-oprojeto.component';
+
 import { HomeComponent } from './module/home/home.component';
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SobreOProjetoComponent } from './module/home/sobre-oprojeto/sobre-oprojeto.component';
 
 
 const appRoutes: Routes = [

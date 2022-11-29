@@ -1,6 +1,7 @@
-import { PerguntasRespostas } from './../../module/perguntasrespostas';
+
 import { Component, OnInit } from '@angular/core';
 import { Pergunta } from 'src/app/module/pergunta';
+import { PerguntasRespostas } from '../../perguntasrespostas';
 
 @Component({
   selector: 'app-lente-divergente',
