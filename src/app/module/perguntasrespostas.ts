@@ -29,4 +29,3 @@ export class PerguntasRespostas<T> {
       return ''
     }
   }
-  
