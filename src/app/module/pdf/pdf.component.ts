@@ -3,7 +3,7 @@ import jsPDF from 'jspdf';
 
 import { Component, OnInit } from '@angular/core';
 
-import { PerguntasRespostas } from './../perguntasrespostas';
+import { PerguntasRespostas } from '../PerguntasRespostas';
 import { ServicoPDFService } from './../../servico-pdf.service';
 import { delay } from 'rxjs';
 @Component({

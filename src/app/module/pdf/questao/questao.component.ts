@@ -1,4 +1,4 @@
-import { PerguntasRespostas } from './../../perguntasrespostas';
+import { PerguntasRespostas } from '../../PerguntasRespostas';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 

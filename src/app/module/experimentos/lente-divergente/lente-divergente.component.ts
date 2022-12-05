@@ -1,7 +1,9 @@
+import { TabelaPerguntas } from './../../Tabela';
 
 import { Component, OnInit } from '@angular/core';
-import { Pergunta } from 'src/app/module/pergunta';
-import { PerguntasRespostas } from '../../perguntasrespostas';
+import { Imagem } from '../../imagem';
+import { Pergunta } from '../../Pergunta';
+import { PerguntasRespostas } from '../../PerguntasRespostas';
 
 @Component({
   selector: 'app-lente-divergente',
@@ -20,6 +22,28 @@ export class LenteDivergenteComponent implements OnInit {
       key: '2',
       label: "Insira as anotações daquilo lá",
       order: 2
+    }),
+    new Imagem({
+      key: '3',
+      value: "assets/imgs/Navbar/LogoOficial.png",
+      order: 2
+    }),
+    new TabelaPerguntas({
+      key: '3',
+      label: "Insira as seguintes informações:",
+      order: 3,
+      listaPerguntas: [
+        new Pergunta({
+          key: "A",
+          label: "Se o caminho do feixe de luz incidente for paralelo ao eixe óptico, qual o caminho do feixe de luz emergente?",
+          order: 1
+        }),
+        new Pergunta({
+          key: "B",
+          label: "Se o caminho do feixe de luz incidente for através do eixo F, qual o caminho do feixe de luz emergente?",
+          order: 2
+        })
+      ]
     })
   ]
 

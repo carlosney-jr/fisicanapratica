@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 import { ServicoPDFService } from './../../../servico-pdf.service';
-import { PerguntasRespostas } from '../../perguntasrespostas';
+import { PerguntasRespostas } from '../../PerguntasRespostas';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

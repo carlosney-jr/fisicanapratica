@@ -6,6 +6,7 @@ export class PerguntasRespostas<T> {
     order: number;
     type: string;
     resposta: string;
+    listaPerguntas: PerguntasRespostas<string>[]
 
     constructor(options: {
         value?: T;
@@ -15,6 +16,7 @@ export class PerguntasRespostas<T> {
         order?: number;
         type?: string;
         resposta?: string;
+        listaPerguntas?: PerguntasRespostas<string>[]
       } = {}) {
       this.value = options.value;
       this.key = options.key || '';
@@ -23,6 +25,7 @@ export class PerguntasRespostas<T> {
       this.order = options.order === undefined ? 1 : options.order;
       this.type = options.type || '';
       this.resposta = options.resposta || '';
+      this.listaPerguntas = options.listaPerguntas || []
     }
 
     toString() {

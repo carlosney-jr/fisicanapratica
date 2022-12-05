@@ -1,8 +1,8 @@
-import { PerguntasRespostas } from './module/perguntasrespostas';
+import { PerguntasRespostas } from './module/PerguntasRespostas';
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
-import { Pergunta } from './module/pergunta';
+import { Pergunta } from './module/Pergunta';
 
 @Injectable({
   providedIn: 'root',
