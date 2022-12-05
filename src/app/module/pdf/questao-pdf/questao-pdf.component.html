@@ -1,0 +1,18 @@
+<div [ngSwitch]="questao.type">
+    <div *ngSwitchCase="'text'">
+      <p class="pergunta"><b>Questão {{ questao.key }}:</b> {{ questao.label }} *</p>
+      <p class="resposta">{{ questao.resposta }} </p>
+    </div>
+     <div *ngSwitchCase="'imagem'">
+      <img [src]="questao.value" class="imgForms">
+    </div>
+     <div *ngSwitchCase="'tabela'">
+      <p>{{ questao.order}}ª questão: {{ questao.label}} </p>
+      <div
+        *ngFor="let questao of questao.listaPerguntas"
+        class="container text-start"
+      >
+        <app-questao-pdf [questao]="questao"></app-questao-pdf><br>
+      </div>
+    </div>
+  </div>

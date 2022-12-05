@@ -1,4 +1,4 @@
-<div id="pdfExportado" class="container text-center" style="display: none">
+<div id="pdfExportado" class="container text-center" style="display: block">
   <div class="pdfHeader row">
     <div class="logo col">
       <img src="assets/imgs/logoIFRN.png" style="width: 80%; height: 80%" />
@@ -12,19 +12,10 @@
     <h1>Experimento - {{ nomeExperimento }}</h1>
     <div class="container text-start">
       <div
-        *ngFor="let pergunta of listaPerguntasRespostas; index as i"
+        *ngFor="let pergunta of listaPerguntasRespostas"
         class="row justify-content-start"
       >
-        <div class="row">
-          <div class="col">
-            <p class="pergunta">{{ i + 1 }}ª questão: {{ pergunta.label }}</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p class="resposta">    {{ pergunta.resposta }}</p>
-          </div>
-        </div>
+        <app-questao-pdf [questao]="pergunta"></app-questao-pdf>
       </div>
     </div>
   </body>

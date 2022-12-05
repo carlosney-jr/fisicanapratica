@@ -1,7 +1,7 @@
 import { TabelaPerguntas } from './../../Tabela';
 
 import { Component, OnInit } from '@angular/core';
-import { Imagem } from '../../imagem';
+import { Imagem } from '../../Imagem';
 import { Pergunta } from '../../Pergunta';
 import { PerguntasRespostas } from '../../PerguntasRespostas';
 
@@ -26,12 +26,12 @@ export class LenteDivergenteComponent implements OnInit {
     new Imagem({
       key: '3',
       value: "assets/imgs/Navbar/LogoOficial.png",
-      order: 2
+      order: 3
     }),
     new TabelaPerguntas({
-      key: '3',
+      key: '4',
       label: "Insira as seguintes informações:",
-      order: 3,
+      order: 4,
       listaPerguntas: [
         new Pergunta({
           key: "A",

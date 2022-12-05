@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 
 import { PDFComponent } from './pdf.component';
 import { QuestaoComponent } from './questao/questao.component';
+import { QuestaoPDFComponent } from './questao-pdf/questao-pdf.component';
 
 
 
@@ -13,7 +14,8 @@ import { QuestaoComponent } from './questao/questao.component';
   declarations: [
     FormularioComponent,
     PDFComponent,
-    QuestaoComponent
+    QuestaoComponent,
+    QuestaoPDFComponent
   ],
   imports: [
     CommonModule,

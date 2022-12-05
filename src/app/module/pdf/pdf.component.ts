@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { PerguntasRespostas } from '../PerguntasRespostas';
 import { ServicoPDFService } from './../../servico-pdf.service';
-import { delay } from 'rxjs';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
