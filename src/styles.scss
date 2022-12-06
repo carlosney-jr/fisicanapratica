@@ -39,8 +39,9 @@ $navbar-light-disabled-color:       rgba($white, .3 * 100%);
 
 
 $dropdown-link-color:               $white;
-$dropdown-link-hover-color:         $navbar-light-hover-color;
+$dropdown-link-hover-color:         $white;
 $dropdown-bg:                       $roxo-primario;
+$dropdown-link-hover-bg:            rgba($roxo-secundario, .80 * 100%);
 
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";

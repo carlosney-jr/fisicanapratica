@@ -20,7 +20,6 @@ export class PDFComponent implements OnInit {
     this.nomeExperimento = ''
   }
 
-  // TODO: Atualizar com a exportação.
   ngOnInit(): void {
     this.servicoPDF.obsPDF.subscribe((valor) => {
       if (valor) {
