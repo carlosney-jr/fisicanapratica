@@ -54,9 +54,10 @@
         class="has-validation container text-start"
         [ngSwitch]="questao.type"
       >
-        <div *ngSwitchCase="'imagem'">
-          <img [src]="questao.resposta" class="imgForms" />
-        </div>
+        <figure *ngSwitchCase="'imagem'" class="figure">
+          <img [src]="questao.resposta" class="imgForms figure-img rounded" />
+          <figcaption class="figure-caption">{{questao.label}}</figcaption>
+        </figure>
         <div *ngSwitchCase="'tabela'">
           <p>{{ questao.key }}ª questão: {{ questao.label }}</p>
           <div

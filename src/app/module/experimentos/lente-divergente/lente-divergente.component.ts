@@ -3,7 +3,7 @@ import { TabelaPerguntas } from './../../Tabela';
 import { Component, OnInit } from '@angular/core';
 import { Imagem } from '../../Imagem';
 import { PerguntasRespostas } from '../../PerguntaRespostas';
-import { Pergunta } from '../../pergunta';
+import { Pergunta } from '../../Pergunta';
 import { PerguntaFilha } from '../../PerguntaFilha';
 
 @Component({
@@ -26,6 +26,7 @@ export class LenteDivergenteComponent implements OnInit {
     }),
     new Imagem({
       key: 'Img1',
+      label: "Figura 1 - Logo do IF",
       resposta: "assets/imgs/Navbar/LogoOficial.png",
       order: 3
     }),
