@@ -13,6 +13,9 @@ $secondary: $roxo-secundario;
     background-color: $roxo-primario;
 }
 
+.experimentos-header {
+    text-align: center;
+}
 .navbar img {
     height: 32px;
     width: 32px;
@@ -35,6 +38,10 @@ $secondary: $roxo-secundario;
     width: 200px;
     max-width: 100%;
     height: auto;
+}
+
+strong {
+    color: $roxo-primario;
 }
 
 

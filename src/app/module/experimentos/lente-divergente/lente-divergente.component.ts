@@ -49,12 +49,6 @@ export class LenteDivergenteComponent implements OnInit {
     })
   ]
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
   get aba() {
     return this._aba;
   }
@@ -69,5 +63,11 @@ export class LenteDivergenteComponent implements OnInit {
 
   configurarAba(evento: string){
     this._aba = evento;
+  }
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
   }
 }

@@ -1,1 +1,63 @@
-<p>transformadores works!</p>
+
+
+<div class="container text-justify" [ngSwitch]="aba">
+    <div id="principal" *ngSwitchCase="'PDF'">
+      <app-formulario
+      (retornarBool)="configurarAba($event)"
+      [perguntas]="questoes"
+      [nomeExperimento]="'Efeito Monga'"></app-formulario>
+    </div>
+    <div id="principal" *ngSwitchCase="'experimento'">
+        <br><h2 class="experimentos-header"> TRANSFORMADOR </h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button text-center"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Montagem
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul>
+                  <li>
+                    Monte o modelo de galvanômetro conforme mostra nas Fig. 1 e 4, e conecte-o em um módulo conector com soquete. 
+                  </li>
+                  <li>
+                    Monte o circuito conforme mostra na Fig.5 com o interruptor aberto e sem o núcleo de ferro na bobina de campo (400 voltas); utilize dois cabos de conexão de 50 cm para conectar o galvanômetro à bobina de indução (1600 voltas); posicione a bobina de indução e a bobina de campo na frente do circuito.
+                  </li>
+                  <li>Selecione o range de medição de 1 A; ajuste a fonte de alimentação para 3 V e ligue-a; feche o interruptor.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+
+      </div>
+      <div class="container roteiro">
+          <br>
+          <h3 class="experimentos-header">Roteiro</h3>
+          <ul>
+              <li>Mova a bobina de campo e a de indução o mais rápido possível para perto e para longe uma da outra (ao longo do eixo da bobina e verticalmente a eles), fazendo isto observe a deflexão do galvanômetro e <strong>anote para inserir no relatório na página seguinte.</strong>
+            </li>
+          </ul>
+      </div>
+      <div class="container text-center">
+      <button (click)="aba = 'PDF'" class="btn btn-primary">Iniciar relatório</button>
+    </div>
+    </div>
+   
+  </div>
+  
