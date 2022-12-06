@@ -1,4 +1,6 @@
-<button (click)="retornar()" class="btn btn-primary position-absolute start-0" >Retornar</button>
+<button (click)="retornar()" class="btn btn-primary position-absolute start-0">
+  Retornar
+</button>
 <div class="container">
   <div class="row text-center">
     <p>Insira o nome dos alunos:</p>
@@ -41,18 +43,34 @@
 </div>
 <div class="container text-center">
   <div class="row justify-content-center">
-    <div class="col ">
+    <div class="col">
       <h1>Formulário</h1>
     </div>
   </div>
   <div>
-    <form (ngSubmit)="exportar()" [formGroup]="form">
+    <form (ngSubmit)="exportar()" [formGroup]="form" class="needs-validation">
       <div
         *ngFor="let questao of listaPerguntas"
         class="has-validation container text-start"
+        [ngSwitch]="questao.type"
       >
-        <app-questao [questao]="questao" [form]="form"></app-questao><br>
-      </div>
+        <div *ngSwitchCase="'imagem'">
+          <img [src]="questao.resposta" class="imgForms" />
+        </div>
+        <div *ngSwitchCase="'tabela'">
+          <p>{{ questao.key }}ª questão: {{ questao.label }}</p>
+          <div
+            *ngFor="let questaoFilha of questao.listaPerguntas"
+            class="has-validation container text-start"
+          >
+            <app-questao [questao]="questaoFilha" [form]="definirNestedForm(form, questao)"></app-questao><br />
+          </div>
+          </div>
+          <div *ngSwitchCase="'text'">
+            <app-questao [questao]="questao" [form]="form"></app-questao><br />
+          </div>
+        </div>
+      
 
       <div>
         <button
@@ -67,4 +85,4 @@
       </div>
     </form>
   </div>
-</div>
+  </div>

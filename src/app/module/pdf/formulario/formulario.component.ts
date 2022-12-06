@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 import { ServicoPDFService } from './../../../servico-pdf.service';
-import { PerguntasRespostas } from '../../PerguntasRespostas';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { PerguntasRespostas } from '../../PerguntaRespostas';
 
 @Component({
   selector: 'app-formulario',
@@ -14,7 +14,7 @@ export class FormularioComponent implements OnInit {
   alunosForm!: FormGroup;
   form!: FormGroup;
 
-  @Input('perguntas') listaPerguntas : PerguntasRespostas<string>[] | null = [];
+  @Input('perguntas') listaPerguntas: PerguntasRespostas<string>[] | null = [];
   @Input() nomeExperimento: string = '';
   @Output() retornarBool: EventEmitter<string> = new EventEmitter<string>()
 
@@ -25,7 +25,8 @@ export class FormularioComponent implements OnInit {
     this.alunosForm = this.fb.group({
       alunos: this.fb.array([this.criarFormAlunos()]) 
     })
-    this.form = this.servicoPDF.toFormGroup(this.listaPerguntas as PerguntasRespostas<string>[]);
+    this.form = this.servicoPDF.toFormGroup(this.listaPerguntas as PerguntasRespostas<string>[])
+    
   }
 
   criarFormAlunos(): FormGroup {
@@ -59,5 +60,9 @@ export class FormularioComponent implements OnInit {
 
   exportar() {
     this.servicoPDF.exportaPDF(this.alunosForm.get('alunos') as FormArray, this.form, this.listaPerguntas as PerguntasRespostas<string>[], this.nomeExperimento);
+  }
+
+  definirNestedForm(form: FormGroup, questaoPai: PerguntasRespostas<string>): FormGroup {
+    return form.controls[questaoPai.key] as FormGroup
   }
 }

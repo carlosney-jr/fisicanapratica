@@ -4,10 +4,10 @@
       <p class="resposta">{{ questao.resposta }} </p>
     </div>
      <div *ngSwitchCase="'imagem'">
-      <img [src]="questao.value" class="imgForms">
+      <img [src]="questao.resposta" class="imgForms">
     </div>
      <div *ngSwitchCase="'tabela'">
-      <p>{{ questao.order}}ª questão: {{ questao.label}} </p>
+      <p>{{ questao.key}}ª questão: {{ questao.label}} </p>
       <div
         *ngFor="let questao of questao.listaPerguntas"
         class="container text-start"

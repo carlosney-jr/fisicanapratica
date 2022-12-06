@@ -1,6 +1,8 @@
-import { PerguntasRespostas } from '../../PerguntasRespostas';
+import { PerguntaFilha } from './../../PerguntaFilha';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { PerguntasRespostas } from '../../PerguntaRespostas';
 
 @Component({
   selector: 'app-questao',
@@ -12,11 +14,14 @@ export class QuestaoComponent implements OnInit {
   @Input() questao!: PerguntasRespostas<string>;
   @Input() form!: FormGroup;
 
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
-  get isValid() { return this.form.controls[this.questao.key].valid; }
+  ngOnInit(): void {
+    
+  }
+
+  get isValid() {
+    return this.form.controls[this.questao.key].valid;
+  }
 }

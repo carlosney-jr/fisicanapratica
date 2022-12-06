@@ -2,8 +2,9 @@ import { TabelaPerguntas } from './../../Tabela';
 
 import { Component, OnInit } from '@angular/core';
 import { Imagem } from '../../Imagem';
-import { Pergunta } from '../../Pergunta';
-import { PerguntasRespostas } from '../../PerguntasRespostas';
+import { PerguntasRespostas } from '../../PerguntaRespostas';
+import { Pergunta } from '../../pergunta';
+import { PerguntaFilha } from '../../PerguntaFilha';
 
 @Component({
   selector: 'app-lente-divergente',
@@ -24,21 +25,21 @@ export class LenteDivergenteComponent implements OnInit {
       order: 2
     }),
     new Imagem({
-      key: '3',
-      value: "assets/imgs/Navbar/LogoOficial.png",
+      key: 'Img1',
+      resposta: "assets/imgs/Navbar/LogoOficial.png",
       order: 3
     }),
     new TabelaPerguntas({
-      key: '4',
+      key: '3',
       label: "Insira as seguintes informações:",
       order: 4,
       listaPerguntas: [
-        new Pergunta({
+        new PerguntaFilha({
           key: "A",
           label: "Se o caminho do feixe de luz incidente for paralelo ao eixe óptico, qual o caminho do feixe de luz emergente?",
           order: 1
         }),
-        new Pergunta({
+        new PerguntaFilha({
           key: "B",
           label: "Se o caminho do feixe de luz incidente for através do eixo F, qual o caminho do feixe de luz emergente?",
           order: 2
@@ -47,10 +48,10 @@ export class LenteDivergenteComponent implements OnInit {
     })
   ]
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    
   }
 
   get aba() {

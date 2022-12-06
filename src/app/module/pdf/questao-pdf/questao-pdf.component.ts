@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PerguntasRespostas } from '../../PerguntasRespostas';
+import { PerguntasRespostas } from '../../PerguntaRespostas';
 
 @Component({
   selector: 'app-questao-pdf',

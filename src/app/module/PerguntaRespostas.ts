@@ -6,6 +6,7 @@ export class PerguntasRespostas<T> {
     order: number;
     type: string;
     resposta: string;
+    perguntaFilha: boolean;
     listaPerguntas: PerguntasRespostas<string>[]
 
     constructor(options: {
@@ -16,6 +17,7 @@ export class PerguntasRespostas<T> {
         order?: number;
         type?: string;
         resposta?: string;
+        perguntaFilha?: boolean;
         listaPerguntas?: PerguntasRespostas<string>[]
       } = {}) {
       this.value = options.value;
@@ -25,10 +27,8 @@ export class PerguntasRespostas<T> {
       this.order = options.order === undefined ? 1 : options.order;
       this.type = options.type || '';
       this.resposta = options.resposta || '';
+      this.perguntaFilha = options.perguntaFilha || false;
       this.listaPerguntas = options.listaPerguntas || []
     }
 
-    toString() {
-      return ''
-    }
   }

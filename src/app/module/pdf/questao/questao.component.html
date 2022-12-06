@@ -1,6 +1,5 @@
 <div [formGroup]="form">
-  <div [ngSwitch]="questao.type">
-    <div *ngSwitchCase="'text'">
+  <div>
       <label [attr.for]="questao.key"><b>Questão {{ questao.key }}:</b> {{ questao.label }} *</label>
       <textarea
         [id]="questao.key"
@@ -9,17 +8,5 @@
         [ngClass]="isValid ? 'is-valid' : 'is-invalid'"
       ></textarea>
     </div>
-    <div *ngSwitchCase="'imagem'">
-      <img [src]="questao.value" class="imgForms">
-    </div>
-    <div *ngSwitchCase="'tabela'">
-      <p>{{ questao.order}}ª questão: {{ questao.label}} </p>
-      <div
-        *ngFor="let questao of questao.listaPerguntas"
-        class="has-validation container text-start"
-      >
-        <app-questao [questao]="questao" [form]="form"></app-questao><br>
-      </div>
-    </div>
+    
   </div>
-</div>

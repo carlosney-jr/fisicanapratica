@@ -3,8 +3,8 @@ import jsPDF from 'jspdf';
 
 import { Component, OnInit } from '@angular/core';
 
-import { PerguntasRespostas } from '../PerguntasRespostas';
 import { ServicoPDFService } from './../../servico-pdf.service';
+import { PerguntasRespostas } from '../PerguntaRespostas';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
@@ -45,7 +45,6 @@ export class PDFComponent implements OnInit {
     let divParaClonar = document.getElementById("pdfExportado") as HTMLElement;
     let div = divParaClonar.cloneNode(true) as HTMLElement;
     div.style.display = 'block'
-    console.log(ExpNM)
     let nomeExperimento: string = ExpNM;
     doc.html(div, {
       callback: function(doc) {

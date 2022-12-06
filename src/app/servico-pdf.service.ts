@@ -1,8 +1,7 @@
-import { PerguntasRespostas } from './module/PerguntasRespostas';
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
-import { Pergunta } from './module/Pergunta';
+import { PerguntasRespostas } from './module/PerguntaRespostas';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +9,7 @@ import { Pergunta } from './module/Pergunta';
 export class ServicoPDFService {
   listaAlunos: string[];
   listaPerguntasRespostas: PerguntasRespostas<string>[];
-  nomeExperimento: string = ''
+  nomeExperimento: string = '';
   obsPDF: Subject<boolean> = new Subject<boolean>();
 
   constructor() {
@@ -18,11 +17,18 @@ export class ServicoPDFService {
     this.listaPerguntasRespostas = [];
   }
 
-  //! MUDAR PERGUNTASRESPOSTAS AQUI
-  exportaPDF(listaAlunos: FormArray, listaRespostas: FormGroup, listaPerguntas: PerguntasRespostas<string>[], nomeExperimento: string) {
+  exportaPDF(
+    listaAlunos: FormArray,
+    listaRespostas: FormGroup,
+    listaPerguntas: PerguntasRespostas<string>[],
+    nomeExperimento: string
+  ) {
     this.listaAlunos = this.tratarFormArray(listaAlunos);
-    this.listaPerguntasRespostas = this.tratarForms(listaRespostas, listaPerguntas);
-    this.nomeExperimento = nomeExperimento
+    this.listaPerguntasRespostas = this.tratarForms(
+      listaRespostas,
+      listaPerguntas
+    );
+    this.nomeExperimento = nomeExperimento;
     this.obsPDF.next(true);
   }
 
@@ -30,26 +36,44 @@ export class ServicoPDFService {
     const group: any = {};
 
     perguntas.forEach((perguntas) => {
-      group[perguntas.key] = perguntas.required
-        ? new FormControl(perguntas.value || '', Validators.required)
-        : new FormControl(perguntas.value || '');
+      if (perguntas.type == 'imagem') {
+        return;
+      } else if (perguntas.type == 'tabela') {
+        group[perguntas.key] = this.toFormGroup(perguntas.listaPerguntas);
+      } else if (perguntas.type == 'text') {
+        group[perguntas.key] = new FormControl(
+          perguntas.value || '',
+          Validators.required
+        );
+      }
     });
     return new FormGroup(group);
   }
 
-  tratarForms(respostas: FormGroup, listaPerguntas: PerguntasRespostas<string>[]) {
+  tratarForms(
+    respostas: FormGroup,
+    listaPerguntas: PerguntasRespostas<string>[]
+  ) {
     for (let i = 0; i < listaPerguntas.length; i++) {
-      listaPerguntas[i].resposta = respostas.value[listaPerguntas[i].key]
+      if (listaPerguntas[i].type == 'tabela') {
+        let listaRespostas = respostas.value[listaPerguntas[i].key];
+        for (let i2 = 0; i2 < listaPerguntas[i].listaPerguntas.length; i2++) {
+          listaPerguntas[i].listaPerguntas[i2].resposta = listaRespostas[listaPerguntas[i].listaPerguntas[i2].key];
+        }
+      } else if (listaPerguntas[i].type == "text") {
+        listaPerguntas[i].resposta = respostas.value[listaPerguntas[i].key];
+      } else if (listaPerguntas[i].type == "imagem") {
+        continue;
+      }
     }
     return listaPerguntas;
   }
 
   tratarFormArray(form: FormArray): string[] {
-    let lista: string[] = []
+    let lista: string[] = [];
     form.controls.forEach((elemento, indice) => {
-      console.log(elemento.value)
-      lista[indice] = elemento.value.nome
-    })
+      lista[indice] = elemento.value.nome;
+    });
     return lista;
   }
 }
