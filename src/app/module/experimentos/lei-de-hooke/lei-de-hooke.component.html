@@ -1,1 +1,116 @@
-<p>lei-de-hooke works!</p>
+<div class="container text-justify" [ngSwitch]="aba">
+  <div id="principal" *ngSwitchCase="'PDF'">
+    <app-formulario
+      (retornarBool)="configurarAba($event)"
+      [perguntas]="questoes"
+      [nomeExperimento]="'Efeito Monga'"
+    ></app-formulario>
+  </div>
+  <div id="principal" *ngSwitchCase="'experimento'">
+    <br />
+    <h2 class="experimentos-header">LEI DE HOOKE</h2>
+    <div class="accordion" id="mainAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button text-center"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Contextualização
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse collapsed"
+          aria-labelledby="headingOne"
+          data-bs-parent="#mainAccordion"
+        >
+          <div class="accordion-body">
+            <p>
+              O físico inglês Robert Hooke foi quem primeiro que descreveu como
+              muitos materiais elásticos apresentam resistência à deformação.
+              Essa resistência, que chamamos de força elástica, é diretamente
+              proporcional a essa deformação. Hooke representou matematicamente
+              sua teoria com a equação:
+            </p>
+            <figure class="figure d-flex justify-content-center">
+              <img
+                src="assets/imgs/Experimentos/Hooke/H01.png"
+                class="figure-img rounded"
+              />
+            </figure>
+            <div class="d-flex justify-content-center">
+              <h3>F = K × X</h3>
+            </div>
+            <p>Em que:</p>
+            <ul>
+              <li>F = força elástica</li>
+              <li>K = constante elástica que depende do tipo de material</li>
+              <li>X = deformação ou alongamento do meio elástico</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button
+              class="accordion-button text-center"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="true"
+              aria-controls="collapseTwo"
+            >
+              Material Necessário e Objetivo
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#mainAccordion"
+          >
+            <div class="accordion-body">
+                <h3>Objetivo geral</h3>
+                <p>Determinar a constante elástica de uma mola de modo experimental.</p>
+                <h3>Material Utilizado</h3>
+                <ul>
+                    <li>Massores</li>
+                    <li>Dinamômetro</li>
+                    <li>Régua</li>
+                    <li>Suporte</li>
+                    <li>Mola (CUIDADO PARA NÃO ULTRAPASSAR O LIMITE DE ELASTICIDADE DA MOLA!)</li>
+                    <li>Porta-massores</li>
+                </ul>
+            </div>
+      </div>
+    </div>
+    <div class="container roteiro">
+      <br>
+      <h3 class="experimentos-header">Roteiro</h3>
+      <ul>
+        <li>
+            Pendure a mola no suporte e ajuste.
+        </li>
+        <li>
+            Meça o peso de cada massor com o auxilio de um dinamômetro.
+        </li>
+        <li>
+            Pendure o porta-massores e um massor. Anote a elongação da mola.
+        </li>
+        <li>
+            Repita o procedimento acrescentando os outros massores disponíveis. <strong>Anote para inserir no relatório na página seguinte.</strong>
+        </li>
+      </ul>
+    </div>
+    <div class="container text-center">
+      <button (click)="aba = 'PDF'" class="btn btn-primary">
+        Iniciar relatório
+      </button>
+    </div>
+  </div>
+</div>

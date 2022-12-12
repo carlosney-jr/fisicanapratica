@@ -3,9 +3,10 @@
       <p class="pergunta"><b>Questão {{ questao.key }}:</b> {{ questao.label }} *</p>
       <p class="resposta">{{ questao.resposta }} </p>
     </div>
-     <div *ngSwitchCase="'imagem'">
-      <img [src]="questao.resposta" class="imgForms">
-    </div>
+    <figure *ngSwitchCase="'imagem'" class="figure d-flex justify-content-center">
+      <img [src]="questao.resposta" class="imgForms figure-img rounded" />
+      <figcaption class="figure-caption">{{questao.label}}</figcaption>
+    </figure>
      <div *ngSwitchCase="'tabela'">
       <p>{{ questao.key}}ª questão: {{ questao.label}} </p>
       <div

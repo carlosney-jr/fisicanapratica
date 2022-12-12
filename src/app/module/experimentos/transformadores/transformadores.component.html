@@ -1,63 +1,110 @@
-
-
 <div class="container text-justify" [ngSwitch]="aba">
-    <div id="principal" *ngSwitchCase="'PDF'">
-      <app-formulario
+  <div id="principal" *ngSwitchCase="'PDF'">
+    <app-formulario
       (retornarBool)="configurarAba($event)"
       [perguntas]="questoes"
-      [nomeExperimento]="'Efeito Monga'"></app-formulario>
-    </div>
-    <div id="principal" *ngSwitchCase="'experimento'">
-        <br><h2 class="experimentos-header"> TRANSFORMADOR </h2>
-      <div class="accordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button text-center"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              Montagem
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
+      [nomeExperimento]="'Efeito Monga'"
+    ></app-formulario>
+  </div>
+  <div id="principal" *ngSwitchCase="'experimento'">
+    <br />
+    <h2 class="experimentos-header">TRANSFORMADOR</h2>
+    <div class="accordion" id="mainAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button text-center"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
           >
-            <div class="accordion-body">
-              <ul>
-                  <li>
-                    Monte o modelo de galvanômetro conforme mostra nas Fig. 1 e 4, e conecte-o em um módulo conector com soquete. 
-                  </li>
-                  <li>
-                    Monte o circuito conforme mostra na Fig.5 com o interruptor aberto e sem o núcleo de ferro na bobina de campo (400 voltas); utilize dois cabos de conexão de 50 cm para conectar o galvanômetro à bobina de indução (1600 voltas); posicione a bobina de indução e a bobina de campo na frente do circuito.
-                  </li>
-                  <li>Selecione o range de medição de 1 A; ajuste a fonte de alimentação para 3 V e ligue-a; feche o interruptor.</li>
-              </ul>
-            </div>
+            Montagem
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="mainAccordion">
+            <ul>
+              <li>
+                Monte o modelo de galvanômetro conforme mostra nas Fig. 1 à 4, e
+                conecte-o em um módulo conector com soquete.
+              </li>
+              <figure class="figure d-flex justify-content-center">
+                <img
+                  src="assets/imgs/Experimentos/Transformador/TRA01020304.png"
+                  class="figure-img rounded"
+                />
+              </figure>
+              <li>
+                Monte o circuito conforme mostra na Fig.5 com o interruptor
+                aberto e sem o núcleo de ferro na bobina de campo (400 voltas);
+                utilize dois cabos de conexão de 50 cm para conectar o
+                galvanômetro à bobina de indução (1600 voltas); posicione a
+                bobina de indução e a bobina de campo na frente do circuito.
+              </li>
+              <figure class="figure d-flex justify-content-center">
+                <img
+                  src="assets/imgs/Experimentos/Transformador/TRA0506.png"
+                  class="figure-img rounded"
+                />
+              </figure>
+              <li>
+                Selecione o range de medição de 1 A; ajuste a fonte de
+                alimentação para 3 V e ligue-a; feche o interruptor.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div>
-
-      </div>
-      <div class="container roteiro">
-          <br>
-          <h3 class="experimentos-header">Roteiro</h3>
-          <ul>
-              <li>Mova a bobina de campo e a de indução o mais rápido possível para perto e para longe uma da outra (ao longo do eixo da bobina e verticalmente a eles), fazendo isto observe a deflexão do galvanômetro e <strong>anote para inserir no relatório na página seguinte.</strong>
-            </li>
-          </ul>
-      </div>
-      <div class="container text-center">
-      <button (click)="aba = 'PDF'" class="btn btn-primary">Iniciar relatório</button>
     </div>
+    <div class="container roteiro">
+      <br />
+      <h3 class="experimentos-header">Roteiro</h3>
+      <ul>
+        <li>
+          Mova a bobina de campo e a de indução o mais rápido possível para
+          perto e para longe uma da outra (ao longo do eixo da bobina e
+          verticalmente a eles), fazendo isto observe a deflexão do
+          galvanômetro.
+          <strong>Anote o que foi observado para inserir no relatório na página seguinte.</strong>
+        </li>
+        <li>
+          Coloque o núcleo em "I" na bobina de campo, como na figura 7, e execute os
+          mesmos movimentos entre as bobinas, executados anteriormente. <strong>Anote o que foi observado para inserir no relatório na página seguinte.</strong>
+        </li>
+        <figure class="figure d-flex justify-content-center">
+          <img
+            src="assets/imgs/Experimentos/Transformador/TRA0708.png"
+            class="figure-img rounded"
+          />
+        </figure>
+        <li>
+          Posicione as bobinas próximas uma da outra conforme mostra em Fig. 7, e abra e feche o interruptor. <strong>Anote o que foi observado  para inserir no relatório na página seguinte.</strong>
+        </li>
+        <li>
+          Coloque o núcleo em ambas as bobinas à mesma distância, novamente abra e feche o interruptor. <strong>Anote o que foi observado  para inserir no relatório na página seguinte.</strong>
+        </li>
+        <li>
+          Coloque a bobina de campo e a bobina de indução no núcleo em "U" (veja Fig. 8); abra e feche o interruptor. <strong>Anote o que foi observado  para inserir no relatório na página seguinte.</strong>
+        </li>
+        <li>
+          Com o interruptor fechado altere a tensão da fonte de alimentação entre 0 V e 3 V. <strong>Anote o que foi observado  para inserir no relatório na página seguinte.</strong>
+        </li>
+        <li>
+          Ajuste a fonte de alimentação para 0 V e desligue-a.
+        </li>
+      </ul>
     </div>
-   
+    <div class="container text-center">
+      <button (click)="aba = 'PDF'" class="btn btn-primary">
+        Iniciar relatório
+      </button>
+    </div>
   </div>
-  
+</div>

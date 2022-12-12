@@ -54,9 +54,12 @@
         class="has-validation container text-start"
         [ngSwitch]="questao.type"
       >
-        <figure *ngSwitchCase="'imagem'" class="figure">
+        <figure
+          *ngSwitchCase="'imagem'"
+          class="figure d-flex justify-content-center"
+        >
           <img [src]="questao.resposta" class="imgForms figure-img rounded" />
-          <figcaption class="figure-caption">{{questao.label}}</figcaption>
+          <figcaption class="figure-caption">{{ questao.label }}</figcaption>
         </figure>
         <div *ngSwitchCase="'tabela'">
           <p>{{ questao.key }}ª questão: {{ questao.label }}</p>
@@ -64,14 +67,17 @@
             *ngFor="let questaoFilha of questao.listaPerguntas"
             class="has-validation container text-start"
           >
-            <app-questao [questao]="questaoFilha" [form]="definirNestedForm(form, questao)"></app-questao><br />
-          </div>
-          </div>
-          <div *ngSwitchCase="'text'">
-            <app-questao [questao]="questao" [form]="form"></app-questao><br />
+            <app-questao
+              [questao]="questaoFilha"
+              [form]="definirNestedForm(form, questao)"
+            ></app-questao
+            ><br />
           </div>
         </div>
-      
+        <div *ngSwitchCase="'text'">
+          <app-questao [questao]="questao" [form]="form"></app-questao><br />
+        </div>
+      </div>
 
       <div>
         <button
@@ -86,4 +92,4 @@
       </div>
     </form>
   </div>
-  </div>
+</div>
