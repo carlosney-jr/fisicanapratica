@@ -1,1 +1,90 @@
-<p>torque works!</p>
+<div class="container text-justify" [ngSwitch]="aba">
+    <div id="principal" *ngSwitchCase="'PDF'">
+      <app-formulario
+        (retornarBool)="configurarAba($event)"
+        [perguntas]="questoes"
+        [nomeExperimento]="'Efeito Monga'"
+      ></app-formulario>
+    </div>
+    <div id="principal" *ngSwitchCase="'experimento'">
+      <br />
+      <h2 class="experimentos-header">TORQUE</h2>
+      <div class="accordion" id="mainAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button text-center"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+                Material Necessário
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="mainAccordion">
+              <ul>
+                <li>
+                  Régua;
+                </li>
+                <li>
+                    Massores;
+                </li>
+                <li>
+                    Haste;
+                </li>
+                <li>
+                    Base em X;
+                </li>
+                <li>
+                    Dinamômetro
+                </li>
+              </ul>
+              <div class="row">
+                <div class="col d-flex justify-content-around">
+              <figure class="figure">
+                <img
+                  src="assets/imgs/Experimentos/Torque/T01.png"
+                  class="figure-img rounded"
+                />
+                <figcaption class="figure-caption">Itens para montagem</figcaption>
+              </figure>
+            </div>
+            <div class="col d-flex justify-content-around">
+              <figure class="figure">
+                  <img
+                    src="assets/imgs/Experimentos/Torque/T02.png"
+                    class="figure-img rounded"
+                  />
+                  <figcaption class="figure-caption">Montagem final</figcaption>
+                </figure>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container roteiro">
+        <br />
+        <h3 class="experimentos-header">Roteiro</h3>
+        <ul>
+          <li>
+           Você deve colocar um massor com 50g no ponto 10 e, a partir dele, com a ajuda do dinamômetro, encontre a força que deve ser colocada no ponto oposto para equilibrar a gangorra. <strong>Siga para as questões do relatório para a continuação.</strong>
+          </li>
+        </ul>
+      </div>
+      <div class="container text-center">
+        <button (click)="aba = 'PDF'" class="btn btn-primary">
+          Iniciar relatório
+        </button>
+      </div>
+    </div>
+  </div>
+  

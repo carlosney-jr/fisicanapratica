@@ -1,5 +1,3 @@
-import { PerguntaFilha } from './../../PerguntaFilha';
-
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { PerguntasRespostas } from '../../PerguntaRespostas';
@@ -18,7 +16,6 @@ export class QuestaoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
 
   get isValid() {
