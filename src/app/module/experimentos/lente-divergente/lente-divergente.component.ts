@@ -16,36 +16,14 @@ export class LenteDivergenteComponent implements OnInit {
   public questoes: PerguntasRespostas<string>[] = [
     new Pergunta({
       key: '1',
-      label: "Como foi possível perceber o efeito 'Monga'?",
-      order: 1
-    }),
-    new Pergunta({
-      key: '2',
-      label: "Insira as anotações daquilo lá",
-      order: 2
+      order: 1,
+      label: "Após movimentar a caixa de luz para posições diagonais como, por exemplo, a figura 1, o que foi observado do percurso da luz após atravessar a lente?"
     }),
     new Imagem({
-      key: 'Img1',
-      label: "Figura 1 - Logo do IF",
-      resposta: "assets/imgs/Navbar/LogoOficial.png",
-      order: 3
-    }),
-    new TabelaPerguntas({
-      key: '3',
-      label: "Insira as seguintes informações:",
-      order: 4,
-      listaPerguntas: [
-        new PerguntaFilha({
-          key: "A",
-          label: "Se o caminho do feixe de luz incidente for paralelo ao eixe óptico, qual o caminho do feixe de luz emergente?",
-          order: 1
-        }),
-        new PerguntaFilha({
-          key: "B",
-          label: "Se o caminho do feixe de luz incidente for através do eixo F, qual o caminho do feixe de luz emergente?",
-          order: 2
-        })
-      ]
+      key: "Img1",
+      order: 2,
+      label: "Figura 1 - Exemplo de movimentação da caixa de luz",
+      resposta: "assets/imgs/Experimentos/LenteDivergente/LD03.png"
     })
   ]
 
