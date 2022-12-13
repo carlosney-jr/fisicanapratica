@@ -1,137 +1,255 @@
 <div class="container text-justify" [ngSwitch]="aba">
-    <div id="principal" *ngSwitchCase="'PDF'">
-      <app-formulario
-        (retornarBool)="configurarAba($event)"
-        [perguntas]="questoes"
-        [nomeExperimento]="'Efeito Monga'"
-      ></app-formulario>
-    </div>
-    <div id="principal" *ngSwitchCase="'experimento'">
-      <br />
-      <h2 class="experimentos-header">LENTE CONVERGENTE</h2>
-      <div class="accordion" id="mainAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button text-center"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              Experimento: Como a luz é refratada por uma lente convergente? -
-              Objetivos
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#mainAccordion"
+  <div id="principal" *ngSwitchCase="'PDF'">
+    <app-formulario
+      (retornarBool)="configurarAba($event)"
+      [perguntas]="questoes"
+      [nomeExperimento]="'Efeito Monga'"
+    ></app-formulario>
+  </div>
+  <div id="principal" *ngSwitchCase="'experimento'">
+    <br />
+    <h2 class="experimentos-header">LENTE CONVERGENTE</h2>
+    <div class="accordion" id="mainAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button text-center"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
           >
-            <div class="accordion-body">
-              <p>
-                <strong>Objetivo: </strong> Investigar a passagem da luz através de uma lente plano-convexa (convergente), entender o que é hipermetropia e a função da lente convergente para correção.
-              </p>
-            </div>
+            Experimento: Como a luz é refratada por uma lente convergente? -
+            Objetivos
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#mainAccordion"
+        >
+          <div class="accordion-body">
+            <p>
+              <strong>Objetivo: </strong> Investigar a passagem da luz através
+              de uma lente plano-convexa (convergente), entender o que é
+              hipermetropia e a função da lente convergente para correção.
+            </p>
           </div>
         </div>
       </div>
-      <div class="container roteiro">
-        <br />
-        <h3 class="experimentos-header">Roteiro</h3>
+    </div>
+    <div class="container roteiro">
+      <br />
+      <h3 class="experimentos-header">Roteiro</h3>
+      <ul>
+        <li>
+          Desenhe linhas cruzadas em ângulos retos no meio de uma folha de
+          papel. O cruzamento das linhas é rotulado por M. Faça duas marcas na
+          linha vertical a uma distância de 3 cm de M. (Fig. 1)
+        </li>
+        <div class="d-flex justify-content-around">
+          <figure class="figure text-center">
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC01.png"
+              class="figure-img rounded"
+            />
+            <figcaption class="figure-caption">Figura 1</figcaption>
+          </figure>
+        </div>
+        <li>
+          Marcar a uma distância de 11,3 cm à esquerda de M um ponto, indicando
+          com a letra F. Marque outro ponto a 9,0 cm á direita de M e indique-o
+          por F'. Veja a figura 02.
+        </li>
+        <div class="d-flex justify-content-around">
+          <figure class="figure text-center">
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC02.png"
+              class="figure-img rounded"
+            />
+            <figcaption class="figure-caption">Figura 2</figcaption>
+          </figure>
+        </div>
+        <li>Conecte a caixa de luz à fonte de alimentação (8 V) e ligue-a.</li>
+        <li>
+          Observe o percurso da luz passando através da lente. Depois, desloque
+          a caixa de luz para as posições mostradas na fig. 03.
+          <strong
+            >Observe novamente o caminho da luz e anote suas observações para
+            inserir na página seguinte.</strong
+          >
+        </li>
+        <div class="d-flex justify-content-around">
+          <figure class="figure text-center">
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC0301.png"
+              class="figure-img rounded"
+            />
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC0302.png"
+              class="figure-img rounded"
+            />
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC0303.png"
+              class="figure-img rounded"
+            />
+            <figcaption class="figure-caption">Figura 3</figcaption>
+          </figure>
+        </div>
+        <li>
+          Insira a fenda única na caixa de luz e posicione-a a uma distância de
+          12 cm da superfície da lente. Altere cuidadosamente a posição da caixa
+          de luz até que estreitos feixes de luz viajem precisamente paralelos
+          ao eixo óptico ao longo da linha guia (Figura 04).
+          <strong>Observe o feixe de luz refratada.</strong>
+        </li>
+        <div class="d-flex justify-content-around">
+          <figure class="figure text-center">
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC04.png"
+              class="figure-img rounded"
+            />
+            <figcaption class="figure-caption">Figura 4</figcaption>
+          </figure>
+        </div>
+        <li>
+          Repita o último passo, mas deixe que o feixe de luz viaje através do
+          ponto F (garanta um pequeno ângulo de incidência) até atingir a lente.
+          Desenhe na folha o caminho do feixe de luz incidente e emergente.
+          <strong>Anote suas observações.</strong>
+        </li>
+        <div class="d-flex justify-content-around">
+          <figure class="figure text-center">
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC05.png"
+              class="figure-img rounded"
+            />
+            <figcaption class="figure-caption">Figura 5</figcaption>
+          </figure>
+        </div>
+        <li>
+          Repita as observações e marcações dos feixes de luz que viajam em
+          direção ao ponto M.
+        </li>
+        <div class="d-flex justify-content-around">
+          <figure class="figure text-center">
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC06.png"
+              class="figure-img rounded"
+            />
+            <figcaption class="figure-caption">Figura 6</figcaption>
+          </figure>
+        </div>
+      </ul>
+      <div>
+        <h3 class="experimentos-header">PROBLEMAS VISUAIS: Hipermetropia</h3>
+        <div class="d-block text-center">
+          <p>
+            <strong>Hipermetropia</strong> é uma condição do olho em que a luz é
+            focada na parte posterior da retina, ao invés da própria retina.
+            Isto faz com que a pessoa veja desfocados os objetos a curta
+            distância, enquanto os objetos distantes são vistos normalmente. À
+            medida que a condição se agrava, é possível que se comece a ver os
+            objetos desfocados a qualquer distância. A imagem do objeto é
+            formada após a retina quando os objetos se encontram “próximos”.
+            Veja a figura abaixo. Uma lente do tipo convergente deve ser usada
+            para diminuir a abertura dos raios de luz que chegam ao olho e,
+            consequentemente, convergir mais rápido, idealmente sobre a retina.
+          </p>
+          <figure class="figure d-block text-center">
+            <img
+              src="assets/imgs/Experimentos/LenteConvergente/LC08.png"
+              class="figure-img rounded"
+            />
+            <figcaption class="figure-caption">Figura 7</figcaption>
+          </figure>
+        </div>
         <ul>
           <li>
-            Desenhe linhas cruzadas em ângulos retos no meio de uma folha de papel. O cruzamento das linhas é rotulado por M. Faça duas marcas na linha vertical a uma distância de 3 cm de M. (Fig. 1) 
+            <u>Simulação da hipermetropia e sua correção:</u> Prepare uma folha
+            de papel, como mostrado na Figura 08. Desenhe linhas perpendiculares
+            em distâncias de 10 cm e 23 cm da borda direita do papel (os pontos
+            de intersecção das linhas são M e P).
           </li>
           <div class="d-flex justify-content-around">
             <figure class="figure text-center">
               <img
-                src="assets/imgs/Experimentos/LenteConvergente/LC01.png"
+                src="assets/imgs/Experimentos/LenteConvergente/LC09.png"
                 class="figure-img rounded"
               />
-              <figcaption class="figure-caption">Figura 1</figcaption>
+              <figcaption class="figure-caption">Figura 8</figcaption>
             </figure>
           </div>
           <li>
-            Marcar a uma distância de 11,3 cm à esquerda de M um ponto, indicando com a letra F. Marque outro ponto a 9,0 cm á direita de M e indique-o por F'. Veja a figura 02.
+            Desenhe um semicírculo de M com um raio de 3 cm. O cruzamento com o
+            eixo óptico é S. Hachure esta área semicircular. Veja Figura 9.
           </li>
           <div class="d-flex justify-content-around">
             <figure class="figure text-center">
               <img
-                src="assets/imgs/Experimentos/LenteConvergente/LC02.png"
+                src="assets/imgs/Experimentos/LenteConvergente/LC10.png"
                 class="figure-img rounded"
               />
-              <figcaption class="figure-caption">Figura 2</figcaption>
+              <figcaption class="figure-caption">Figura 9</figcaption>
             </figure>
           </div>
           <li>
-            Conecte a caixa de luz à fonte de alimentação (8 V) e ligue-a.
-          </li>
-          <li>
-            Observe o percurso da luz passando através da lente. Depois, desloque a caixa de luz para as posições mostradas na fig. 03. <strong>Observe novamente o caminho da luz e anote suas observações para inserir na página seguinte.</strong>
+            Faça duas marcas, 3 cm acima e abaixo de P, na linha perpendicular.
+            Além disso, desenhe um segundo arco, mas a partir de S e com um raio
+            de 4,5 cm. O cruzamento com o eixo óptico indique com a letra F.
+            Este arco representa a retina do olho com hipermetropia no modelo.
           </li>
           <div class="d-flex justify-content-around">
             <figure class="figure text-center">
               <img
-                src="assets/imgs/Experimentos/LenteConvergente/LC0301.png"
+                src="assets/imgs/Experimentos/LenteConvergente/LC11.png"
                 class="figure-img rounded"
               />
-              <img
-                src="assets/imgs/Experimentos/LenteConvergente/LC0302.png"
-                class="figure-img rounded"
-              />
-              <img
-                src="assets/imgs/Experimentos/LenteConvergente/LC0303.png"
-                class="figure-img rounded"
-              />
-              <figcaption class="figure-caption">Figura 3</figcaption>
+              <figcaption class="figure-caption">Figura 10</figcaption>
             </figure>
           </div>
           <li>
-            Insira a fenda única na caixa de luz e posicione-a a uma distância de 12 cm da superfície da lente. Altere cuidadosamente a posição da caixa de luz até que estreitos feixes de luz viajem precisamente paralelos ao eixo óptico ao longo da linha guia (Figura 04). <strong>Observe o feixe de luz refratada.</strong>
+            Insira o diafragma de fenda tripla na caixa de luz e posicione como
+            mostrado na Figura 11. Em seguida pegue a lente convergente
+            semicircular (cristalino do olho) e coloque sobre a área hachurada.
           </li>
           <div class="d-flex justify-content-around">
             <figure class="figure text-center">
               <img
-                src="assets/imgs/Experimentos/LenteConvergente/LC04.png"
+                src="assets/imgs/Experimentos/LenteConvergente/LC12.png"
                 class="figure-img rounded"
               />
-              <figcaption class="figure-caption">Figura 4</figcaption>
+              <figcaption class="figure-caption">Figura 11</figcaption>
             </figure>
           </div>
           <li>
-            Repita o último passo, mas deixe que o feixe de luz viaje através do ponto F (garanta um pequeno ângulo de incidência) até atingir a lente. Desenhe na folha o caminho do feixe de luz incidente e emergente. <strong>Anote suas observações.</strong>
+            <strong>
+              Ligue a fonte luz e anote o que foi observado para inserir no
+              relatório. A luz converge na retina? A que distância da lente
+              ocorre a convergência?
+            </strong>
           </li>
-          <div class="d-flex justify-content-around">
-            <figure class="figure text-center">
-              <img
-                src="assets/imgs/Experimentos/LenteConvergente/LC05.png"
-                class="figure-img rounded"
-              />
-              <figcaption class="figure-caption">Figura 5</figcaption>
-            </figure>
-          </div>
           <li>
-            Repita as observações e marcações dos feixes de luz que viajam em direção ao ponto M.
+            Segure o diafragma de fenda tripla aproximadamente a 5 cm na frente do cristalino, de maneira que o feixe de luz do meio seja incidente ao longo do eixo óptico. <strong>Observe e descreva o caminho da luz por trás do cristalino. Em seguida, coloque a fina lente convergente diretamente na frente do cristalino e anote suas observações novamente.</strong>
           </li>
           <div class="d-flex justify-content-around">
             <figure class="figure text-center">
               <img
-                src="assets/imgs/Experimentos/LenteConvergente/LC06.png"
+                src="assets/imgs/Experimentos/LenteConvergente/LC13.png"
                 class="figure-img rounded"
               />
-              <figcaption class="figure-caption">Figura 6</figcaption>
+              <figcaption class="figure-caption">Figura 12</figcaption>
             </figure>
           </div>
         </ul>
       </div>
-      <div class="container text-center">
-        <button (click)="aba = 'PDF'" class="btn btn-primary">
-          Iniciar relatório
-        </button>
-      </div>
+    </div>
+    <div class="container text-center">
+      <button (click)="aba = 'PDF'" class="btn btn-primary">
+        Iniciar relatório
+      </button>
     </div>
   </div>
-  
+</div>

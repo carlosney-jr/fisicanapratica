@@ -13,7 +13,7 @@ $secondary: $roxo-secundario;
     background-color: $roxo-primario;
 }
 
-.experimentos-header {
+.experimentos-header, .align-center {
     text-align: center;
 }
 .navbar img {
@@ -30,13 +30,13 @@ $secondary: $roxo-secundario;
     color: $red
 }
 
-.resposta .pergunta {
-    text-align: justify;
-}
-
-
 strong {
     color: $roxo-primario;
+}
+
+.paragrafo-projeto, .resposta, .pergunta {
+    text-indent: 30px;
+    text-align: justify
 }
 
 

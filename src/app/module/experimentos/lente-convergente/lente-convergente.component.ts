@@ -97,13 +97,34 @@ export class LenteConvergenteComponent {
     new Pergunta({
       key: '6',
       order: 9,
-      label: "As lentes convergentes são usadas em praticamente todos os instrumentos ópticos (lupa, câmera fotográfica, telescópio, microscópio, projetor), mas o olho também possui tal lente. Qual seria esta lente, de acordo com a figura 5."
+      label: "As lentes convergentes são usadas em praticamente todos os instrumentos ópticos (lupa, câmera fotográfica, telescópio, microscópio, projetor), mas o olho também possui tal lente. Qual seria esta lente, de acordo com a figura 5?"
     }),
     new Imagem({
       key: "Img5",
       order: 10,
       label: "Figura 5",
       resposta: "assets/imgs/Experimentos/LenteConvergente/LC07.png"
+    }),
+    new Pergunta({
+      key: '7',
+      order: 11,
+      label: "O que foi observado na prática de simulação de hipermetropia e sua correção? A luz converge na retina? A que distância da lente ocorreu a convergência?"
+    }),
+    new Pergunta({
+      key: "8",
+      order: 12,
+      label: "Agora na prática da correção de hipermetropia, o que foi observado? Qual foi o caminho feito pela luz por trás do cristalino? O que ocorreu ao colocar a lente convergente diretamente na frente do cristalino tal como na figura 6?"
+    }),
+    new Imagem({
+      key: "Img6",
+      order: 13,
+      label: "Figura 6",
+      resposta: "assets/imgs/Experimentos/LenteConvergente/LC13.png"
+    }),
+    new Pergunta({
+      key: "9",
+      order: 14,
+      label: "Agora faça um texto com as principais características e funções de uma lente convergente, função do cristalino no olho humano e o problema visual denominado de hipermetropia."
     })
   ]
 }
